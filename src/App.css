@@ -12,13 +12,26 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.tab {
+  width: 100%;
+  height: 40vh;
+}
 button {
   width: 100px;
   height: 50px;
   padding: 20px;
   margin: 10px;
-  background-color: aquamarine;
+  background-color: darkorange;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: larger;
+}
+button:hover {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: yellow;
+  padding: 5px;
+  box-shadow: 1px 2px 3px;
 }
 table {
   margin-top: 10px;
@@ -26,32 +39,15 @@ table {
   height: 500px;
   overflow-y: scroll;
 }
+
 th {
-  background-color: bisque;
+  background-color: black;
+  color: whitesmoke;
 }
 tr:nth-child(even) {
-  background-color: cornflowerblue;
+  background-color: bisque;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table thead tr th:first-child {
+  left: 0px;
+  z-index: 2;
 }

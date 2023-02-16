@@ -110,86 +110,90 @@ const Table = () => {
             <button onClick={handler}>update</button>
             <h3>click on update and please wait while loading the data</h3>
           </div>
-          <table border={1}>
-            <tr>
-              <th>ID</th>
-              <th>TIMESTAMP (UNIX)</th>
-              <th>TRANSACTION ID</th>
-              <th>POOL ID</th>
-              <th>TOKEN 0 ID</th>
-              <th>TOKEN 0 SYMBOL</th>
-              <th>TOKEN 1 ID</th>
-              <th>TOKEN 1 SYMBOL</th>
-              <th>SENDER</th>
-              <th>RECIPIENT</th>
-              <th>ORIGIN</th>
-              <th>AMOUNT 0</th>
-              <th>AMOUNT 1</th>
-              <th>AMOUNT USD</th>
-              <th>SQRT PRICE X96</th>
-              <th>TICK</th>
-              <th>LOG INDEX</th>
-            </tr>
-            {swaps.map((item) => {
-              return (
-                <tr>
-                  <td>{item.id}</td>
-                  <td>{item.time}</td>
-                  <td>
-                    {
-                      trans.find((i) => {
-                        return item.id === i.id;
-                      }).childid
-                    }
-                  </td>
-                  <td>
-                    {
-                      pool.find((i) => {
-                        return item.id === i.id;
-                      }).childid
-                    }
-                  </td>
-                  <td>
-                    {
-                      tokenzero.find((i) => {
-                        return item.id === i.id;
-                      }).childid
-                    }
-                  </td>
-                  <td>
-                    {
-                      tokenzero.find((i) => {
-                        return item.id === i.id;
-                      }).symbol
-                    }
-                  </td>
-                  <td>
-                    {
-                      tokenone.find((i) => {
-                        return item.id === i.id;
-                      }).childid
-                    }
-                  </td>
-                  <td>
-                    {
-                      tokenone.find((i) => {
-                        return item.id === i.id;
-                      }).symbol
-                    }
-                  </td>
-                  <td>{item.sender}</td>
-                  <td>{item.recipient}</td>
-                  <td>{item.origin}</td>
-                  <td>{item.amount0}</td>
-                  <td>{item.amount1}</td>
-                  <td>{item.amountusd}</td>
-                  <td>{item.sqrtpricex96}</td>
-                  <td>{item.tick}</td>
-                  <td>{item.logindex}</td>
-                </tr>
-              );
-            })}
-          </table>
+          <div className="tab">
+            <table border={1}>
+              <tr>
+                <th>S.NO</th>
+                <th>ID</th>
+                <th>TIMESTAMP (UNIX)</th>
+                <th>TRANSACTION ID</th>
+                <th>POOL ID</th>
+                <th>TOKEN 0 ID</th>
+                <th>TOKEN 0 SYMBOL</th>
+                <th>TOKEN 1 ID</th>
+                <th>TOKEN 1 SYMBOL</th>
+                <th>SENDER</th>
+                <th>RECIPIENT</th>
+                <th>ORIGIN</th>
+                <th>AMOUNT 0</th>
+                <th>AMOUNT 1</th>
+                <th>AMOUNT USD</th>
+                <th>SQRT PRICE X96</th>
+                <th>TICK</th>
+                <th>LOG INDEX</th>
+              </tr>
+              {swaps.map((item, index) => {
+                return (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td>{item.id}</td>
+                    <td>{item.time}</td>
+                    <td>
+                      {
+                        trans.find((i) => {
+                          return item.id === i.id;
+                        }).childid
+                      }
+                    </td>
+                    <td>
+                      {
+                        pool.find((i) => {
+                          return item.id === i.id;
+                        }).childid
+                      }
+                    </td>
+                    <td>
+                      {
+                        tokenzero.find((i) => {
+                          return item.id === i.id;
+                        }).childid
+                      }
+                    </td>
+                    <td>
+                      {
+                        tokenzero.find((i) => {
+                          return item.id === i.id;
+                        }).symbol
+                      }
+                    </td>
+                    <td>
+                      {
+                        tokenone.find((i) => {
+                          return item.id === i.id;
+                        }).childid
+                      }
+                    </td>
+                    <td>
+                      {
+                        tokenone.find((i) => {
+                          return item.id === i.id;
+                        }).symbol
+                      }
+                    </td>
+                    <td>{item.sender}</td>
+                    <td>{item.recipient}</td>
+                    <td>{item.origin}</td>
+                    <td>{item.amount0}</td>
+                    <td>{item.amount1}</td>
+                    <td>{item.amountusd}</td>
+                    <td>{item.sqrtpricex96}</td>
+                    <td>{item.tick}</td>
+                    <td>{item.logindex}</td>
+                  </tr>
+                );
+              })}
+            </table>
+          </div>
         </div>
       )}
     </>
