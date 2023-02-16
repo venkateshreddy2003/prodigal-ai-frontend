@@ -30,11 +30,21 @@ const Table = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     async function fetchData() {
-      const res1 = await axios.get("http://localhost:9000/get-swaps");
-      const res2 = await axios.get("http://localhost:9000/get-trans");
-      const res3 = await axios.get("http://localhost:9000/get-pool");
-      const res4 = await axios.get("http://localhost:9000/get-tokenzero");
-      const res5 = await axios.get("http://localhost:9000/get-tokenone");
+      const res1 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-swaps"
+      );
+      const res2 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-trans"
+      );
+      const res3 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-pool"
+      );
+      const res4 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-tokenzero"
+      );
+      const res5 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-tokenone"
+      );
       console.log(res1.data.length);
       console.log(res2.data.length);
       console.log(res3.data.length);
@@ -58,13 +68,23 @@ const Table = () => {
   }, [swaps, pool, trans, tokenone, tokenzero]);
   const handler = async () => {
     setLoading(true);
-    await axios.put("http://localhost:9000/");
+    await axios.put("https://prodigal-ai-backend.onrender.com/");
     setTimeout(async () => {
-      const res1 = await axios.get("http://localhost:9000/get-swaps");
-      const res2 = await axios.get("http://localhost:9000/get-trans");
-      const res3 = await axios.get("http://localhost:9000/get-pool");
-      const res4 = await axios.get("http://localhost:9000/get-tokenzero");
-      const res5 = await axios.get("http://localhost:9000/get-tokenone");
+      const res1 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-swaps"
+      );
+      const res2 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-trans"
+      );
+      const res3 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-pool"
+      );
+      const res4 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-tokenzero"
+      );
+      const res5 = await axios.get(
+        "https://prodigal-ai-backend.onrender.com/get-tokenone"
+      );
       console.log(res1.data.length);
       console.log(res2.data.length);
       console.log(res3.data.length);
